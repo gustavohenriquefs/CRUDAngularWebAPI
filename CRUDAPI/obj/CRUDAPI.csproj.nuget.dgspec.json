@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\CRUDAPI\\CRUDAPI.csproj": {}
+    "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\crudapi\\CRUDAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\CRUDAPI\\CRUDAPI.csproj": {
+    "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\crudapi\\CRUDAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\CRUDAPI\\CRUDAPI.csproj",
+        "projectUniqueName": "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\crudapi\\CRUDAPI.csproj",
         "projectName": "CRUDAPI",
-        "projectPath": "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\CRUDAPI\\CRUDAPI.csproj",
+        "projectPath": "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\crudapi\\CRUDAPI.csproj",
         "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\CRUDAPI\\obj\\",
+        "outputPath": "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\crudapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRUDAPI.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20210916173522_criacaoDb")]
+    [Migration("20210916201636_criacaoDb")]
     partial class criacaoDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
