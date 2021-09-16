@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CRUDAPI",
+    "\\CRUDAPI\\bin",
+    "\\CRUDAPI\\bin\\Release",
+    "\\CRUDAPI\\bin\\Release\\net5.0",
+    "\\CRUDAPI\\bin\\Release\\net5.0\\ref",
+    "\\CRUDAPI\\Controllers",
+    "\\CRUDAPI\\Models",
+    "\\CRUDAPI\\obj",
+    "\\CRUDAPI\\Properties"
+  ],
+  "SelectedNode": "\\AppAngular",
+  "PreviewInSolutionExplorer": false
+}

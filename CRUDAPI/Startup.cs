@@ -1,3 +1,5 @@
+using System.Net;
+using System.Reflection.Emit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using CRUDAPI.Models;
 
 namespace CRUDAPI
 {
@@ -26,7 +30,7 @@ namespace CRUDAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<Contexto>(opcoes => opcoes.UseSqlServer(Configuration.GetConnectionString("ConexaoBD")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

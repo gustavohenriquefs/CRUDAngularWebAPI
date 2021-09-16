@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Gk13xdlYTvthKqQy4Vk168KwvsxQVASQccHV1Vg9JBnMS5qCYNXRMQAjQPrmzTewqSEnXXon23lmwRSlL06q6w==",
+  "dgSpecHash": "OgaGjnnQjz09z/J3YN8vI1kyZ5AiJqoGV6SAmCOGYaHjp5yXF2yJj1LPInl/DNroTnJoqAPPhV0FAcHhM32qPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\crudapi\\CRUDAPI.csproj",
+  "projectFilePath": "C:\\Users\\gusta\\source\\repos\\CRUDAngularWebAPI\\CRUDAPI\\CRUDAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gusta\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
