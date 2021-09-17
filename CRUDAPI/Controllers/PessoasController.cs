@@ -36,7 +36,6 @@ namespace CRUDAPI.Controllers
         {
             await _contexto.Pessoas.AddAsync(pessoa);
             await _contexto.SaveChangesAsync();
-
             return Ok();
         }
         [HttpPut]
@@ -44,7 +43,6 @@ namespace CRUDAPI.Controllers
         {
             _contexto.Pessoas.Update(pessoa);
             await _contexto.SaveChangesAsync();
-
             return Ok();
         }
         [HttpDelete("{pessoaId}")]

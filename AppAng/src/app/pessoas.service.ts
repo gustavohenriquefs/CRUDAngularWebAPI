@@ -17,20 +17,20 @@ export class PessoasService {
 
   constructor(private http: HttpClient) {}
 
-  PegarTodas(): Observable<Pessoa[]> {
+  pegarTodas(): Observable<Pessoa[]> {
     return this.http.get<Pessoa[]>(this.url);
   }
-  PegarPeloId(pessoaId: number): Observable<Pessoa> {
+  pegarPeloId(pessoaId: number): Observable<Pessoa> {
     const apiUrl = `${this.url}/${pessoaId}`;
     return this.http.get<Pessoa>(apiUrl);
   }
-  SalvarPessoa(pessoa: Pessoa): Observable<any> {
+  salvarPessoa(pessoa: Pessoa): Observable<any> {
     return this.http.post<Pessoa>(this.url, pessoa, httpOptions);
   }
-  AtualizarPessoa(pessoa: Pessoa): Observable<any> {
+  atualizarPessoa(pessoa: Pessoa): Observable<any> {
     return this.http.put<Pessoa>(this.url, pessoa, httpOptions);
   }
-  ExcluirPessoa(pessoaId: number):Observable<any>{
+  excluirPessoa(pessoaId: number):Observable<any>{
     const apiUrl = `${this.url}/${pessoaId}`
     return this.http.delete<number>(apiUrl);
   }

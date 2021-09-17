@@ -3,7 +3,7 @@
     <div class="col-6 border border-light rounded p-5 shadow" *ngIf="formulario">
       <h6> {{ tituloFormulario }} </h6>
       <hr />
-      <form formGroup="formulario">
+      <form [formGroup]="formulario">
         <div class="form-group">
           <label>Nome</label>
           <input type="text" class="form-control form-control-sm" formControlName="nome" />
@@ -23,12 +23,12 @@
         <div class="conteiner">
           <div class="row">
             <div>
-              <button type="submit" class="btn btn-sm btn-outline-secundary">
+              <button type="submit" class="btn btn-sm btn-outline-secundary" (click)="enviarFormulario()">
                 Salvar
               </button>
             </div>
             <div class="pl-1">
-              <button type="submit" class="btn btn-sm btn-light">
+              <button class="btn btn-sm btn-light">
                 Voltar
               </button>
             </div>
