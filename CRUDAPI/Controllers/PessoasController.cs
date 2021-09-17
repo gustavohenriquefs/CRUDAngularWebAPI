@@ -21,7 +21,7 @@ namespace CRUDAPI.Controllers
         {
             return await _contexto.Pessoas.ToListAsync();
         }
-        [HttpGet("pessoaId")]
+        [HttpGet("{pessoaId}")]
         public async Task<ActionResult<Pessoa>> PegarPessoaPeloIdAsync(int pessoaId)
         {
             Pessoa pessoa = await _contexto.Pessoas.FindAsync(pessoaId);
@@ -51,6 +51,9 @@ namespace CRUDAPI.Controllers
         public async Task<ActionResult> ExcluirPessoaAsync(int pessoaId)
         {
             Pessoa pessoa = await _contexto.Pessoas.FindAsync(pessoaId);
+            if(pessoa == null)
+                return NotFound();
+            
             _contexto.Remove(pessoa);
             await _contexto.SaveChangesAsync();
             return Ok();
