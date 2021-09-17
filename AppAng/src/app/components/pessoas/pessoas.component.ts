@@ -12,15 +12,24 @@ export class PessoasComponent implements OnInit {
 
   formulario: FormGroup;
   tituloFormulario: string;
+  pessoas: Pessoa[];
+
+  visibilidadeTabela: boolean = true;
+  visibilidadeFormulario: boolean = false;
 
   constructor(private pessoasService: PessoasService) { }
 
   ngOnInit(): void {
-    this.tituloFormulario = "Nova Pessoa"
-    this.construcaoForm();
+    this.pegarPessoas();
   }
 
-  construcaoForm() {
+  exibirFormularioCadastro(): void {
+    this.visibilidadeTabela = false;
+    this.visibilidadeFormulario = true;
+    this.construirFormulario();
+  }
+  construirFormulario(){
+    this.tituloFormulario = "Nova Pessoa"
     this.formulario =
       new FormGroup({
         nome: new FormControl(null),
@@ -30,18 +39,30 @@ export class PessoasComponent implements OnInit {
       });
   }
 
+  pegarPessoas(){
+    this.pessoasService.pegarTodas().subscribe(
+      res => this.pessoas = res
+    )
+  }
+
   enviarFormulario(): void {
-    console.log(this.formulario.value);
+
     const pessoa: Pessoa = this.formulario.value;
-    console.log(pessoa.idade)
-    console.log(pessoa);
+
     this.pessoasService.salvarPessoa(pessoa)
       .subscribe({
         next: res => {
-          console.log(res);
+          this.visibilidadeFormulario = false;
+          this.visibilidadeTabela = true;
           alert('Pessoa inserida com sucesso!');
+          this.pegarPessoas();
         },
         error: error => console.log(error)
       })
+  }
+
+  voltar(): void{
+    this.visibilidadeTabela = true;
+    this.visibilidadeFormulario = false;
   }
 }

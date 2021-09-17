@@ -1,4 +1,40 @@
-<div class="conteiner p-5">
+<div class="conteiner p-5"  *ngIf="visibilidadeTabela">
+  <div class="border border-light rounded p-5">
+    <div>
+      <button type="button" class="btn btn-sm btn-secundary" (click)="exibirFormularioCadastro()">
+        Nova Pessoa
+      </button>
+    </div>
+    <hr />
+    <!-- *ngIf para atualizar os dados quando modificados -->
+    <table class="table table-striped table-hover table-sm" *ngIf="pessoas">
+      <tr class="thead-light">
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Idade</th>
+        <th>Profissão</th>
+        <th>Ações</th>
+      </tr>
+      <tr *ngFor="let pessoa of pessoas">
+        <th>{{ pessoa.nome }}</th>
+        <th>{{ pessoa.sobrenome }}</th>
+        <th>{{ pessoa.idade }}</th>
+        <th>{{ pessoa.profissao }}</th>
+        <td>
+          <button class="btn btn-sm btn-outline-info">
+            Atualizar
+          </button>
+          |
+          <button class="btn btn-sm btn-outline-danger">
+            Excluir
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="conteiner p-5" *ngIf = "visibilidadeFormulario">
   <div class="row">
     <div class="col-6 border border-light rounded p-5 shadow" *ngIf="formulario">
       <h6> {{ tituloFormulario }} </h6>
@@ -28,7 +64,7 @@
               </button>
             </div>
             <div class="pl-1">
-              <button class="btn btn-sm btn-light">
+              <button class="btn btn-sm btn-light" (click)="voltar()">
                 Voltar
               </button>
             </div>
