@@ -28,7 +28,26 @@ export class PessoasComponent implements OnInit {
     this.visibilidadeFormulario = true;
     this.construirFormulario();
   }
-  construirFormulario(){
+
+  exibirFormularioAtualizacao(pessoaId): void {
+    this.visibilidadeTabela = false;
+    this.visibilidadeFormulario = true;
+    this.pessoasService.pegarPeloId(pessoaId).subscribe(
+      res => {
+        this.tituloFormulario = `Atualizar ${res.nome} ${res.sobrenome}`;
+
+        this.formulario = new FormGroup({
+          pessoaId: new FormControl(res.pessoaId),
+          nome: new FormControl(res.nome),
+          sobrenome: new FormControl(res.sobrenome),
+          idade: new FormControl(res.idade),
+          profissao: new FormControl(res.profissao)
+        })
+      }
+    )
+  }
+
+  construirFormulario() {
     this.tituloFormulario = "Nova Pessoa"
     this.formulario =
       new FormGroup({
@@ -39,29 +58,37 @@ export class PessoasComponent implements OnInit {
       });
   }
 
-  pegarPessoas(){
+  pegarPessoas() {
     this.pessoasService.pegarTodas().subscribe(
       res => this.pessoas = res
     )
   }
 
   enviarFormulario(): void {
-
     const pessoa: Pessoa = this.formulario.value;
 
-    this.pessoasService.salvarPessoa(pessoa)
-      .subscribe({
-        next: res => {
-          this.visibilidadeFormulario = false;
-          this.visibilidadeTabela = true;
-          alert('Pessoa inserida com sucesso!');
-          this.pegarPessoas();
-        },
-        error: error => console.log(error)
-      })
+    if (pessoa.pessoaId > 0) {
+      this.pessoasService.atualizarPessoa(pessoa).subscribe(res => {
+        this.visibilidadeFormulario = false;
+        this.visibilidadeTabela = true;
+        alert('Pessoa atualizada com sucesso!');
+        this.pegarPessoas();
+      });
+    } else {
+      this.pessoasService.salvarPessoa(pessoa)
+        .subscribe({
+          next: res => {
+            this.visibilidadeFormulario = false;
+            this.visibilidadeTabela = true;
+            alert('Pessoa inserida com sucesso!');
+            this.pegarPessoas();
+          },
+          error: error => console.log(error)
+        })
+    }
   }
 
-  voltar(): void{
+  voltar(): void {
     this.visibilidadeTabela = true;
     this.visibilidadeFormulario = false;
   }
